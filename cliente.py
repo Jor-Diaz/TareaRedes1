@@ -20,12 +20,10 @@ def ConexionUDP(direccion_servidor,port,URL): #Funcion para la conexion TCP
 	mensaje = "OK"                       
 	UDP_SOCKET_CLIENTE.sendto(mensaje.encode(),(direccion_servidor,int(port))) #Enviamos el mensaje OK		
 	response, _ = UDP_SOCKET_CLIENTE.recvfrom(BUFFER_SIZE) #Obtenemos la respuesta del servidor	
+	UDP_SOCKET_CLIENTE.close()#Cerramos conexion UDP
 	createFile(response.decode(),URL)	
 	print("# Header Recibido")			
-	#print(respuesta.decode()) #Eliminar despues
-	#crear_archivo(URL) #Guardamos HEADER en archivo
-	#print("Respuesta Guardada en archivo URL.txt")
-	UDP_SOCKET_CLIENTE.close()#Cerramos conexion UDP
+	return
 
 
 

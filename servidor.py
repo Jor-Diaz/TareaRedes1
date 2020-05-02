@@ -31,7 +31,7 @@ def ConexionUDP(respuesta):#Funcion para conexion UDP
     print("[°] Mensaje del Cliente: " + str(mensaje.decode()) )        
     UDP_SOCKET_SERVIDOR.sendto(respuesta.encode(),direccion_cliente)#Enviamos la respuesta 
     UDP_SOCKET_SERVIDOR.close() #Cerramos la conexion UDP
-
+    return
 
 ## MAIN
 #LRU=[('DOMINIO','RESPUESTA'),('DOMINIO','RESPUESTA'),('DOMINIO','RESPUESTA'),('DOMINIO','RESPUESTA')]
