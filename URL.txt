@@ -1,0 +1,47 @@
+-------------------------------------------------Contenido Header de la URL: google.clHTTP/1.1 301 Moved Permanently
+Location: http://www.google.cl/
+Content-Type: text/html; charset=UTF-8
+Date: Sat, 02 May 2020 22:00:13 GMT
+Expires: Mon, 01 Jun 2020 22:00:13 GMT
+Cache-Control: public, max-age=2592000
+Server: gws
+Content-Length: 218
+X-XSS-Protection: 0
+X-Frame-Options: SAMEORIGIN
+
+-------------------------------------------------Contenido Header de la URL: lun.clHTTP/1.0 302 Found
+Location: http://www.lun.com
+Server: BigIP
+Connection: Keep-Alive
+Content-Length: 0
+
+-------------------------------------------------Contenido Header de la URL: salesianosmacul.clHTTP/1.1 301 Moved Permanently
+Server: nginx
+Date: Sat, 02 May 2020 22:00:26 GMT
+Content-Type: text/html; charset=utf-8
+Content-Length: 0
+Connection: keep-alive
+X-Powered-By: PHP/5.6.40
+X-Logged-In: False
+X-Content-Powered-By: K2 v2.8.0 (by JoomlaWorks)
+P3P: CP="NOI ADM DEV PSAi COM NAV OUR OTRo STP IND DEM"
+Expires: Wed, 17 Aug 2005 00:00:00 GMT
+Cache-Control: no-store, no-cache, must-revalidate, post-check=0, pre-check=0, no-store, no-cache, must-revalidate, post-check=0, pre-check=0
+Pragma: no-cache, no-cache
+Set-Cookie: 18881527c1c8cc4c44e51ee610b0c003=gmhuja5e6092uqgr91ag109pg4; path=/; HttpOnly
+Location: http://salesianosmacul.cl/index.php?lang=es
+Last-Modified: Sat, 02 May 2020 22:00:26 GMT
+X-XSS-Protection: 1; mode=block
+X-Content-Type-Options: nosniff
+X-Nginx-Cache-Status: MISS
+X-Server-Powered-By: Engintron
+
+-------------------------------------------------Contenido Header de la URL: facebook.clHTTP/1.1 302 Found
+Location: https://www.facebook.com/
+Content-Type: text/html; charset="utf-8"
+X-FB-Debug: FBQjPiRO+Tl3XcwtHog/ukwraxmy3Lk8/tsLw9rE09bWofDYqhK2cqkuTkCjXdwRX9Zw8XF2YDzGRMX/GE7ikQ==
+Date: Sat, 02 May 2020 22:00:31 GMT
+Alt-Svc: h3-27=":443"; ma=3600
+Connection: keep-alive
+Content-Length: 0
+

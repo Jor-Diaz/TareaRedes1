@@ -2,12 +2,14 @@ import socket
 
 #49152-6535 puertos disponibles
 host='localhost'
-port = 5005 #Puerto ocupado en TCP
+port = 5004 #Puerto ocupado en TCP
 BUFFER_SIZE = 2048
 
 
-def createFile(response, URL):
-	arch=open(URL+".txt","a")
+def createFile(response,URL):
+	arch=open("URL.txt","a+")
+	arch.write("-------------------------------------------------")
+	arch.write("Contenido Header de la URL: "+str(URL))
 	arch.write(response)
 	arch.close()
 	
@@ -16,12 +18,10 @@ def createFile(response, URL):
 def ConexionUDP(direccion_servidor,port,URL): #Funcion para la conexion TCP
 	UDP_SOCKET_CLIENTE=socket.socket(socket.AF_INET,socket.SOCK_DGRAM) #Creamos el socket UDP		
 	mensaje = "OK"                       
-	UDP_SOCKET_CLIENTE.sendto(mensaje.encode(),(direccion_servidor,int(port))) #Enviamos el mensaje OK
-	respuesta, _ = UDP_SOCKET_CLIENTE.recvfrom(BUFFER_SIZE) #Obtenemos la respuesta del servidor
-	print("I get it")
-	respuesta = respuesta.decode()
-	print(respuesta)
-	createFile(respuesta, URL)
+	UDP_SOCKET_CLIENTE.sendto(mensaje.encode(),(direccion_servidor,int(port))) #Enviamos el mensaje OK		
+	response, _ = UDP_SOCKET_CLIENTE.recvfrom(BUFFER_SIZE) #Obtenemos la respuesta del servidor	
+	createFile(response.decode(),URL)	
+	print("# Header Recibido")			
 	#print(respuesta.decode()) #Eliminar despues
 	#crear_archivo(URL) #Guardamos HEADER en archivo
 	#print("Respuesta Guardada en archivo URL.txt")
@@ -43,10 +43,11 @@ while mensaje!="terminate":
 	TCP_SOCKET_CLIENTE.send(mensaje.encode('utf-8'))
 	if mensaje!='terminate':#verificamos que no se quiera terminar conexion
 		data = TCP_SOCKET_CLIENTE.recv(BUFFER_SIZE)#recibimos resultado
-		data=data.decode()
-		print(data)
-		print(data.strip().split("?|¿"))
+		data=data.decode()				
 		status,puerto=data.strip().split("?|¿")
 		if status=="OK":
 			ConexionUDP('localhost',puerto,mensaje)#Creamos conexion UDP
+		else:
+			print("[°](Mensaje Servidor) No se encontro el sitio web o no estaba disponible")	
+	print("-------------------------------------------") 	
 
