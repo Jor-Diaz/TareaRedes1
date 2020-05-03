@@ -2,12 +2,12 @@ import socket
 
 #49152-6535 puertos disponibles
 host='localhost'
-port = 5004 #Puerto ocupado en TCP
+port = 5007 #Puerto ocupado en TCP
 BUFFER_SIZE = 2048
 
 
 def createFile(response,URL):
-	arch=open("URL.txt","a+")
+	arch=open(str(URL)+".txt","a+")
 	arch.write("-------------------------------------------------")
 	arch.write("Contenido Header de la URL: "+str(URL))
 	arch.write(response)
@@ -48,4 +48,6 @@ while mensaje!="terminate":
 		else:
 			print("[°](Mensaje Servidor) No se encontro el sitio web o no estaba disponible")	
 	print("-------------------------------------------") 	
+TCP_SOCKET_CLIENTE.close() 	
+
 
